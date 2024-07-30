@@ -1,0 +1,48 @@
+/* base.css */
+
+body {
+    background-color: #f0f0f0; /* Warna background body */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font yang lebih modern */
+}
+
+nav a {
+    text-align: left;
+    color: #333; /* Warna teks navbar */
+}
+
+nav ul li a:hover {
+    text-decoration: none; /* Menghilangkan garis bawah saat hover */
+    color: #007bff; /* Warna hover */
+}
+
+nav ul li a.active,
+nav ul li a:hover { /* Warna teks saat active atau hover */
+    text-align: right;
+    color: #007bff; /* Misalnya biru */
+    font-weight: bold; /* Menambahkan bold pada teks */
+}
+
+nav ul li a.active {
+    background-color: #e9ecef; /* Warna background saat active */
+    border-bottom: 2px solid #007bff; /* Garis bawah untuk active */
+}
+
+.navbar-brand {
+    font-weight: bold; /* Menambahkan bold pada brand */
+    font-size: 1.2rem; /* Ukuran font brand */
+}
+
+.dropdown-menu {
+    border-radius: 0.5rem; /* Menambahkan border-radius ke dropdown */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan ke dropdown */
+}
+
+.dropdown-item {
+    color: #333; /* Warna teks dropdown item */
+    padding: 0.5rem 1rem; /* Margin untuk dropdown item */
+}
+
+.dropdown-item:hover {
+    background-color: #e9ecef; /* Warna background saat hover */
+    color: #007bff; /* Warna teks saat hover */
+}

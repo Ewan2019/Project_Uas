@@ -1,0 +1,15 @@
+{% extends 'base.html' %}  <!-- Meng-extend atau menggunakan template 'base.html' sebagai dasar halaman -->
+
+{% block title %}Halaman Utama{% endblock %}  <!-- Mendefinisikan judul halaman sebagai 'Halaman Utama' -->
+
+{% block content %}  <!-- Mulai blok konten dari halaman -->
+<link rel="stylesheet" href="/style/indeks.css">  <!-- Menghubungkan file CSS khusus untuk halaman ini -->
+
+<h2>Selamat Datang Di website kami</h2>  <!-- Heading 2 menyambut pengunjung -->
+<div class="text-center">
+    <img src="/static/img/logo-k3.jpg" class="rounded" alt="">
+</div>  <!-- Menampilkan gambar logo -->
+
+<h2>---- coming soon ----</h2>
+
+{% endblock %}  <!-- Selesai blok konten -->

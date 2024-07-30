@@ -1,0 +1,71 @@
+{% extends 'base.html' %}  <!-- Meng-extend atau menggunakan template 'base.html' sebagai dasar halaman -->
+
+{% block title %}Hapus Akun/Data Pelamar{% endblock %}  <!-- Mendefinisikan judul halaman sebagai 'Hapus Akun/Data Pelamar' -->
+
+{% block content %}  <!-- Mulai blok konten dari halaman -->
+<!-- Gaya CSS internal untuk styling elemen form -->
+<style> 
+    form {
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<!-- pesan flash -->
+{% with messages = get_flashed_messages(with_categories=true) %}  <!-- Mengambil pesan flash dengan kategori -->
+{% if messages %}  <!-- Jika terdapat pesan flash -->
+    {% for category, message in messages %}  <!-- Looping setiap pesan flash -->
+    <!-- alert -->
+    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">  <!-- Membuat alert dengan kelas sesuai kategori pesan flash -->
+      <strong>{{ message }}</strong>  <!-- Menampilkan isi pesan flash -->
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>  <!-- Tombol untuk menutup alert -->
+    </div>
+    {% endfor %}
+{% endif %}
+{% endwith %}
+
+<form action="{{ url_for('delete') }}" method="post">  <!-- Form untuk menghapus akun dengan aksi menuju endpoint 'delete' -->
+    <label for="username">Username:</label>  <!-- Label untuk input username -->
+    <input type="text" id="username" name="username" placeholder="Masukkan username untuk hapus akun">  <!-- Input username -->
+    <label for="password">Password:</label>  <!-- Label untuk input password -->
+    <input type="password" id="password" name="password" placeholder="Masukkan password untuk hapus akun">  <!-- Input password -->
+    <button type="submit">Hapus Akun</button>  <!-- Tombol submit untuk menghapus akun -->
+</form>
+
+<form action="{{ url_for('delete') }}" method="post">  <!-- Form untuk menghapus data pelamar dengan aksi menuju endpoint 'delete' -->
+    <label for="nik">NIK:</label>  <!-- Label untuk input NIK -->
+    <input type="text" id="nik" name="nik" placeholder="Masukkan NIK untuk hapus data pelamar">  <!-- Input NIK -->
+    <button type="submit">Hapus Data Pelamar</button>  <!-- Tombol submit untuk menghapus data pelamar -->
+</form>
+
+
+{% endblock %}  <!-- Selesai blok konten -->

@@ -1,0 +1,22 @@
+/* futaba.css */
+h4 {
+    font-weight: bold; /* Menambahkan bold pada heading h4 */
+}
+
+.alert {
+    margin-bottom: 10px; /* Margin bawah alert */
+}
+
+.alert-success {
+    background-color: #d4edda; /* Warna background alert success */
+    border-color: #c3e6cb; /* Warna border alert success */
+}
+
+.alert-danger {
+    background-color: #f8d7da; /* Warna background alert danger */
+    border-color: #f5c6cb; /* Warna border alert danger */
+}
+
+.text-start {
+    text-align: left; /* Menambahkan text-align: left pada teks */
+}

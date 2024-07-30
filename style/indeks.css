@@ -1,0 +1,10 @@
+/* indeks.css */
+
+body {
+    margin-left: 20px; /* Margin kiri 20px untuk body */
+}
+
+h2 {
+    text-align: left; /* Teks heading 2 rata kiri */
+    margin-left: 20px; /* Margin kiri 20px untuk heading 2 */
+}

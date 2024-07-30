@@ -1,0 +1,84 @@
+{% extends 'base.html' %}  <!-- Meng-extend atau menggunakan template 'base.html' sebagai dasar halaman -->
+
+{% block title %}Data Diri{% endblock %}  <!-- Mendefinisikan judul halaman sebagai 'Data Diri' -->
+
+{% block content %}  <!-- Mulai blok konten dari halaman -->
+
+<link rel="stylesheet" href="/style/dataDiri.css">  <!-- Menghubungkan file CSS untuk styling khusus halaman ini -->
+
+<!-- pesan flash -->
+{% with messages = get_flashed_messages(with_categories=true) %}  <!-- Mengambil pesan flash dengan kategori -->
+{% if messages %}  <!-- Jika terdapat pesan flash -->
+    {% for category, message in messages %}  <!-- Looping setiap pesan flash -->
+    <!-- alert -->
+    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">  <!-- Membuat alert dengan kelas sesuai kategori pesan flash -->
+      <strong>{{ message }}</strong>  <!-- Menampilkan isi pesan flash -->
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>  <!-- Tombol untuk menutup alert -->
+    </div>
+    {% endfor %}  <!-- Selesai looping pesan flash -->
+{% endif %}
+{% endwith %}
+
+<div class="container mt-5">  <!-- Mulai div container untuk konten -->
+    <div class="row justify-content-center">  <!-- Baris konten yang diatur di tengah -->
+        <div class="col-md-6">  <!-- Kolom lebar medium 6 -->
+            <div class="card">  <!-- Menggunakan kartu sebagai kontainer utama -->
+                <div class="card-header">  <!-- Bagian header kartu -->
+                    <h2>Form Data Diri</h2>  <!-- Judul form -->
+                </div>
+                <div class="card-body">  <!-- Isi dari kartu -->
+                    <form action="/dataDiri" method="POST">  <!-- Form dengan aksi dan metode POST -->
+                        <div class="form-group">  <!-- Grup elemen form -->
+                            <label for="nama_pelamar">Nama:</label> <!-- Label untuk input nama -->
+                            <input type="text" id="nama_pelamar" placeholder="Masukan nama lengkap" name="nama_pelamar" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nik">NIK:</label> <!-- Label untuk input nik -->
+                            <input type="number" id="nik" placeholder="Masukan NIK" name="nik" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nomer_hp">No Hp:</label> <!-- Label untuk input nomor hp -->
+                            <input type="number" id="nomer_hp" placeholder="Masukan Nomor Hp" name="nomer_hp" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label> <!-- Label untuk input email -->
+                            <input type="email" id="email" placeholder="Masukan email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="domisili">Alamat lengkap:</label> <!-- Label untuk input alamat lengkap -->
+                            <input type="text" id="domisili" placeholder="Masukan Alamat" name="domisili" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="jenis_kelamin">Jenis Kelamin:</label> <!-- Label untuk memilih jenis kelamin -->
+                            <select name="jenis_kelamin" id="jenis_kelamin" class="form-control" aria-label="Default select example">
+                                <option selected>---Pilih Jenis Kelamin---</option>
+                                <option value="laki-laki">Laki-laki</option>
+                                <option value="perempuan">Perempuan</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="tanggal_lahir">Tanggal Lahir:</label> <!-- Label untuk input tanggal lahir -->
+                            <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="pendidikan">Pendidikan:</label> <!-- Label untuk memilih pendidikan -->
+                            <select name="pendidikan" id="pendidikan" class="form-control" aria-label="Default select example">
+                                <option selected>---Pilih pendidikan---</option>
+                                <option value="SLTA">SMK/SMA</option>
+                                <option value="D3">D3</option>
+                                <option value="S1">S1</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="usia">Usia:</label> <!-- Label untuk input usia -->
+                            <input type="number" id="usia" placeholder="Masukan Usia" name="usia" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button> <!-- Label untuk submit -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- selesai blok konten -->
+{% endblock %}

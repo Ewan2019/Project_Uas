@@ -1,0 +1,17 @@
+body {
+    margin-left: 20px; /* Margin kiri 20px untuk body */
+}
+
+h2 {
+    font-weight: bold;
+    color: #007bff; /* Warna teks h2 */
+}
+
+a {
+    color: #007bff; /* Warna teks link */
+}
+
+a:hover {
+    text-decoration: none; /* Menghilangkan garis bawah saat hover */
+    color: #0056b3; /* Warna teks link saat hover */
+}

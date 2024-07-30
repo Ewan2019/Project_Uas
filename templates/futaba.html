@@ -1,0 +1,56 @@
+{% extends 'base.html' %}  <!-- Meng-extend atau menggunakan template 'base.html' sebagai dasar halaman -->
+
+{% block title %}PT. Futaba{% endblock %}  <!-- Mendefinisikan judul halaman sebagai 'PT. Futaba' -->
+
+{% block content %}  <!-- Mulai blok konten dari halaman -->
+<link rel="stylesheet" href="/style/futaba.css">  <!-- Menghubungkan file CSS khusus untuk halaman ini -->
+<div class="row justify-content-left">  <!-- Baris konten dengan penyejajaran ke kiri -->
+    <div class="col-md-4 text-left mt-3 mb-4">  <!-- Kolom lebar medium 4 dengan teks rata kiri dan margin atas serta bawah -->
+      <!-- pesan flash -->
+      {% with messages = get_flashed_messages(with_categories=true) %}  <!-- Mengambil pesan flash dengan kategori -->
+      {% if messages %}  <!-- Jika terdapat pesan flash -->
+          {% for category, message in messages %}  <!-- Looping setiap pesan flash -->
+          <!-- alert -->
+          <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">  <!-- Membuat alert dengan kelas sesuai kategori pesan flash -->
+            <strong>{{ message }}</strong>  <!-- Menampilkan isi pesan flash -->
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>  <!-- Tombol untuk menutup alert -->
+          </div>
+          {% endfor %}
+      {% endif %}
+      {% endwith %}
+    </div>
+</div>
+<h4>Kriteria Umum kebutuhan di PT. FUTABA indonesia untuk Posisi Produksi:</h4>  <!-- Heading 4 untuk kriteria kebutuhan di PT. FUTABA -->
+<p>1. Pria, Usia Minimal 18 Tahun dan Maksimal 21 Tahun. <br>  <!-- Poin 1 kriteria -->
+    2. Jurusan Permesinan,Elind, TKRO <br>  <!-- Poin 2 kriteria -->
+    3. Tinggi Badan Minimal 165 cm <br>  <!-- Poin 3 kriteria -->
+    4. Sudah Melakukan Vaksin 1, 2, dan Booster <br>  <!-- Poin 4 kriteria -->
+    5. Fresh Graduate silahkan melamar, tapi lebih baik jika memiliki pengalaman. <br>  <!-- Poin 5 kriteria -->
+    6. Disiplin, Dapat Bekerja Secara Individual ataupun Kelompok. <br>  <!-- Poin 6 kriteria -->
+    7. Siap Bekerja dengan sistem Shift <br>  <!-- Poin 7 kriteria -->
+    8. Penempatan Kawasan GIIC <br><br>  <!-- Poin 8 kriteria -->
+    
+    “ membawa FC KTP, FC Ijazah dan FC CV” <br><br>  <!-- Informasi membawa dokumen penting -->
+    
+    boleh hadir pemberkasan : <br>  <!-- Informasi tentang hadir untuk pemberkasan -->
+    Hari : Jumat, 12/07/24 <br>  <!-- Detail hari pemberkasan -->
+    Jam : 09:00 WIB <br>  <!-- Detail jam pemberkasan -->
+    Tempat : Aula, SMK Ananda Mitra Industri Deltamas. <br>  <!-- Detail tempat pemberkasan -->
+    Dresscode : celana dasar hitam dan kemeja Bebas. <br><br>  <!-- Informasi dresscode -->
+</p>
+<h4>silahkan apply jika berniat datang.</h4>  <!-- Heading 4 untuk instruksi apply -->
+<div class="container">  <!-- Kontainer div untuk form aplikasi -->
+    <div class="row justify-content-left">  <!-- Baris konten dengan penyejajaran ke kiri -->
+      <div class="col-md-4">  <!-- Kolom lebar medium 4 -->
+        <form action="{{ url_for('futaba') }}" method="post">  <!-- Form untuk aplikasi dengan aksi menuju endpoint 'futaba' -->
+          <div class="mb-3">  <!-- Margin bawah 3 -->
+            <label for="nik" class="form-label">NIK</label>  <!-- Label untuk input NIK -->
+            <input type="number" class="form-control" id="nik" placeholder="Masukan NIK" name="nik" autocomplete="off" required>  <!-- Input NIK -->
+          </div>
+          <button type="submit" class="btn btn-primary">Apply</button>  <!-- Tombol submit untuk aplikasi -->
+          <div class="text-start">Belum punya data....? Klik <a href="{{ url_for('dataDiri') }}">Form Data Diri</a></div>  <!-- Tautan untuk menuju form data diri -->
+        </form>
+      </div>
+    </div>
+</div>
+{% endblock %}  <!-- Selesai blok konten -->

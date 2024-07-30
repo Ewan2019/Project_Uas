@@ -1,0 +1,14 @@
+{% extends 'base.html' %}  <!-- Meng-extend atau menggunakan template 'base.html' sebagai dasar halaman -->
+
+{% block title %}Lowongan{% endblock %}  <!-- Mendefinisikan judul halaman sebagai 'Lowongan' -->
+
+{% block content %}  <!-- Mulai blok konten dari halaman -->
+<link rel="stylesheet" href="/style/lowongan.css">  <!-- Menghubungkan file CSS khusus untuk halaman ini -->
+<h2>PT. Futaba</h2>  <!-- Heading 2 untuk judul perusahaan -->
+
+<!-- start form lowongan -->
+<h4>Kriteria Umum kebutuhan di PT. FUTABA indonesia untuk Posisi Produksi:</h4>  <!-- Heading 4 untuk kriteria kebutuhan -->
+<a href="{{ url_for('futaba') }}">baca selengkapnya</a><br><br>  <!-- Tautan untuk membaca selengkapnya tentang lowongan -->
+
+<h2>---- coming soon for next job ----</h2>
+{% endblock %}  <!-- Selesai blok konten -->
